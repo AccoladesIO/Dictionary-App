@@ -1,0 +1,1 @@
+export const Data:string[] = ['hello', 'bye', 'tick', 'split', 'show', 'react', 'assign', 'big', 'flex', 'grid', 'console', 'flew', 'stay', 'grid']
