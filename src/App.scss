@@ -1,0 +1,47 @@
+// constant variables
+
+$heroBackground: #f1f5f8;
+$heroTextMain: #102a42;
+$headingSub: #617d98;
+$btnColor: #ab7a5f;
+$width: 100%;
+$padding: 2rem;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+html{
+    font-size: 62.65%;
+}
+
+
+h1{
+    color: $heroTextMain;
+    font-size: 3.8rem;
+    font-family: primaryFont;
+
+    @media screen and (max-width: 80rem) {
+        font-size: 3.2rem;
+    }
+    @media screen and (max-width: 42rem) {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+}
+p{
+    color: $headingSub;
+    font-family: secFont;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    display: inline-block;
+    padding: 3px;
+    justify-content: center;
+}
+button{
+    background: $btnColor;
+}
