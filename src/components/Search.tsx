@@ -7,7 +7,7 @@ const Search = () => {
 
     
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.FormEvent) => {
         e.preventDefault()
         console.log(search)
     }
