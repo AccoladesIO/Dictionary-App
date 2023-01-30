@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect} from 'react'
 
 export const useFetch = () => {
 
@@ -6,17 +6,18 @@ export const useFetch = () => {
 
     const [word, setWord] = useState([])
 
-    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${search}`
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en`
 
 
     const fetchData = async () => {
         try {
-            const req = await fetch(url)
+            const req = await fetch(`${url}/${search}`)
             const result = await req.json()
-            // console.log(result)
-            setWord(result)
-        } catch (error) {
-            console.log(error)
+            // console.log(req)
+            console.log(result)
+            setWord(result.data[0])
+        } catch (e) {
+            console.log({e})
         }
     }
 
