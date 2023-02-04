@@ -1,29 +1,36 @@
 import { useState, useEffect} from 'react'
 
+
+
 export const useFetch = () => {
 
     const [search, setSearch] = useState('')
 
-    const [word, setWord] = useState([])
+    const [word, setWord] = useState<any>([])
+    // console.log(word.phonetic, `redtfughyiojk`)
 
-    const url = `https://api.dictionaryapi.dev/api/v2/entries/en`
+
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${search}`
+
+ 
 
 
     const fetchData = async () => {
+    
         try {
-            const req = await fetch(`${url}/${search}`)
-            const result = await req.json()
-            // console.log(req)
-            console.log(result)
-            setWord(result.data[0])
+            const req = await fetch(`${url}`)
+            const res = await req.json() 
+            const text = res[0]
+            console.log(text, text.word)
+            setWord(text)
         } catch (e) {
             console.log({e})
         }
     }
 
-    useEffect (() =>{
-        fetchData()
-    }, [fetchData])
+    // useEffect (() =>{
+    //     fetchData()
+    // }, [search])
 
-    return {word, setWord, search, setSearch}
+    return {word, search, setSearch, fetchData}
 }
