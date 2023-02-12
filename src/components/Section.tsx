@@ -33,7 +33,8 @@ const Section = () => {
         }
     }
 
- 
+     
+
     
 
     console.log(word)
@@ -41,13 +42,13 @@ const Section = () => {
   return (
     <section className="section">
         <Search  search={search} setSearch={setSearch} fetchData={fetchData}/>
-        {word && word.word ? (
-        <h1 className="heading-section-sub">
+       
+       {word && word.word ? 
+        (<h1 className="heading-section-sub">
           You searched for: {word.word}
-        </h1>
-      ) : (
-        <h1 className="heading-section-sub">No data found</h1>
-      )}
+        </h1>) : 
+         ( <h1 className="heading-section-sub">No data found</h1>)
+        }
 
     {word  && word.word ? 
    ( 
