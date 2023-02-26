@@ -63,6 +63,9 @@ input[type='submit']{
 .flex.j{
     justify-content: left;
 }
+.text-align{
+    text-align: center;
+}
 .btn{
     background-color: $btnColor;
     font-family: secFont;
@@ -71,4 +74,7 @@ input[type='submit']{
     color: $textColor;
     font-size: 3.2rem;
 
+}
+.small{
+    font-size: 16px;
 }

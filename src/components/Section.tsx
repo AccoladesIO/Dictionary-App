@@ -11,7 +11,7 @@ const Section = () => {
 
   const [search, setSearch] = useState('')
 
-    const [word, setWord] = useState<any>([])
+    const [word, setWord] = useState<any | string>([])
     // console.log(word.phonetic, `redtfughyiojk`)
 
 
@@ -59,20 +59,24 @@ const Section = () => {
         
     </div>
 
-
+    <div className="text-align">
       {word.meanings.map((mean: string | any) => {
         console.log(mean)
         return (
           <>
-              <p className='flex j'><Fa.FaAngleRight />{mean.partOfSpeech} : {mean.definitions[0].definition}
+          
+
+              <p className='flex j'><Fa.FaAngleRight />{mean.partOfSpeech} : <em className='small'>{mean.definitions[0].definition}</em>
                </p>
      
-              {mean.synonyms.length > 1 ? <p className='flex j'><Fa.FaAngleRight />Synonyms: {mean.synonyms[0] } {mean.synonyms[1]} </p> : null}
-              {mean.antonyms.length > 1 ? <p className='flex j'><Fa.FaAngleRight />Antonyms: {mean.antonyms[0]} {mean.antonyms} </p> : null}
+              {mean.synonyms.length > 1 ? <p className='flex j' ><Fa.FaAngleRight />Synonyms: <em className='small'>{mean.synonyms.join(', ')} </em> </p> : null}
+              {mean.antonyms.length > 1 ? <p className='flex j'><Fa.FaAngleRight />Antonyms: <em className='small'>{mean.antonyms.join(', ')}</em> </p> : null}
               {console.log(mean.antonyms.toString())}
+          
           </>
         )
       })}
+      </div>
        </>
    ) : null
 
