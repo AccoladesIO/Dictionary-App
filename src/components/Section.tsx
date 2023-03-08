@@ -54,11 +54,16 @@ const Section = () => {
    ( 
     <>
    <div className="flex">
-    <p className='flex j'><Fa.FaAngleRight />{word.phonetics[0]?.text} {word.phonetics[1]?.text} </p>
-    <p className='flex j'><Fa.FaAngleRight />Listen : <a href={word.phonetics[0]?.audio} target='_blank'><Fa.FaHeadphones/> </a></p>
+    <p className='flex j'>{word.phonetics[0]?.text} {word.phonetics[1]?.text} </p>
+    <p className='flex j'>
+    
+    <audio controls className='audio-player'>
+  <source src={word.phonetics[0]?.audio} type="audio/mpeg" />
+</audio>
+    </p>
         
     </div>
-
+    
     <div className="text-align">
       {word.meanings.map((mean: string | any) => {
         console.log(mean)
@@ -66,10 +71,11 @@ const Section = () => {
           <>
           
 
-              <p className='flex j'><Fa.FaAngleRight />{mean.partOfSpeech} : <em className='small'>{mean.definitions[0].definition}</em>
-               </p>
+              <p className='flex j'><Fa.FaAngleRight />{mean.partOfSpeech} </p>
+              <hr />
+              <em className='small'>{mean.definitions[0].definition}</em>
      
-              {mean.synonyms.length > 1 ? <p className='flex j' ><Fa.FaAngleRight />Synonyms: <em className='small'>{mean.synonyms.join(', ')} </em> </p> : null}
+              {mean.synonyms.length > 1 ? <p className='flex j' ><Fa.FaAngleRight />Synonyms:  <br /> <em className='small'>{mean.synonyms.join(', ')} </em> </p> : null}
               {mean.antonyms.length > 1 ? <p className='flex j'><Fa.FaAngleRight />Antonyms: <em className='small'>{mean.antonyms.join(', ')}</em> </p> : null}
               {console.log(mean.antonyms.toString())}
           

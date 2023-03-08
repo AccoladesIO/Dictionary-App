@@ -17,8 +17,38 @@ $textColorSec: #795744;
     min-height: 90vh;
     clip-path: polygon(0 0, 100% 0, 100% 73%, 0 93%);
 }
+.logo{
+    font-size: 28px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: $heroBackground;
+    color: $heroTextMain;
+    border-bottom: 1px solid $heroTextMain;
+  }
+  
+  nav.dark-mode {
+    background-color: #4b4a4a;
+    color: $heroBackground;
+  }
+  
+  .toggle-btn {
+    padding: 0.5rem;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #ccc;
+  }
+  
 .section{
-    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%);
+    // clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%);
     background-color: $sectionBackground;
     width: 100%;
     padding:  1rem;
@@ -52,6 +82,10 @@ input[type = 'text']{
 input[type='submit']{
     border-radius: 0 3px 3px 0;
     font-weight: bolder;
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    -ms-border-radius: 0 3px 3px 0;
+    -o-border-radius: 0 3px 3px 0;
 }
 .flex{
     display: flex;
@@ -64,6 +98,7 @@ input[type='submit']{
     justify-content: left;
 }
 .text-align{
+    width: 100%;
     text-align: center;
 }
 .btn{
@@ -75,6 +110,18 @@ input[type='submit']{
     font-size: 3.2rem;
 
 }
+.audio-player {
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    margin: 0 auto;
+  }
 .small{
     font-size: 16px;
+    margin-left: 10px;
+    text-align: left;
+}
+hr{
+    width: 60%;
+    margin: 0 auto;
 }
